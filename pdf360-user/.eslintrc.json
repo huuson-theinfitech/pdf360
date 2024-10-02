@@ -1,0 +1,78 @@
+{
+  "root": true,
+  "env": { "browser": true, "es2020": true },
+  "extends": [
+    "airbnb",
+    "airbnb-typescript",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended-type-checked",
+    "plugin:@typescript-eslint/stylistic-type-checked",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:react-hooks/recommended",
+    "plugin:jsx-a11y/recommended",
+    "prettier",
+    "plugin:prettier/recommended" // Make sure this is always the last element in the array.
+  ],
+  "ignorePatterns": ["dist", ".eslintrc.json"],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "project": "./tsconfig.eslint.json"
+  },
+  "import/order": "off",
+  "settings": {
+    "react": { "version": "detect" },
+    "import/extensions": [".js", ".jsx", ".ts", ".tsx"],
+    "import/resolver": {
+      "alias": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"],
+        "map": [
+          ["@/assets/*", "./src/assets/*"],
+          ["@/components/*", "./src/components/*"],
+          ["@/contexts/*", "./src/contexts/*"],
+          ["@/hooks/*", "./src/hooks/*"],
+          ["@/layouts/*", "./src/layouts/*"],
+          ["@/mocks/*", "./src/mocks/*"],
+          ["@/pages/*", "./src/pages/*"],
+          ["@/routes/*", "./src/routes/*"],
+          ["@/services/*", "./src/services/*"],
+          ["@/themes/*", "./src/themes/*"],
+          ["@/types/*", "./src/types/*"],
+          ["@/utils/*", "./src/utils/*"]
+        ]
+      }
+    }
+  },
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["react", "react-hooks", "react-refresh", "prettier", "jsx-a11y", "import"],
+  "rules": {
+    // JavaScript and TypeScript
+    "no-console": 1,
+    "newline-after-var": 1,
+    "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+    "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+    "@typescript-eslint/no-shadow": "off",
+    "@typescript-eslint/no-misused-promises": [
+      "error",
+      { "checksVoidReturn": { "attributes": false } }
+    ],
+    "radix": ["error", "as-needed"],
+
+    // React
+    "react/require-default-props": "off",
+    "react/prop-types": "off",
+    "react/function-component-definition": ["warn", { "namedComponents": "arrow-function" }],
+    "react/jsx-props-no-spreading": "off",
+    "react-refresh/only-export-components": "off",
+
+    // Plugins
+    "import/extensions": "off",
+    "import/prefer-default-export": "off",
+    "import/no-extraneous-dependencies": "off",
+    "import/no-cycle": "off"
+  }
+}

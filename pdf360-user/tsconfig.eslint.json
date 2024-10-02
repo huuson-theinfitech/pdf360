@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    // repeated from base config's "include" setting
+    "src",
+    "tests",
+    "./src",
+    "*.ts",
+    "*.tsx",
+    ".storybook/*.ts",
+    ".storybook/*.tsx",
+
+    // these are the eslint-only inclusions
+    ".eslintrc.json"
+  ]
+}

@@ -1,0 +1,41 @@
+version: "3.8"
+services:
+  fe:
+    build:
+      context: ./pdf360-user
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./pdf360-user:/app
+      - /app/node_modules
+    depends_on:
+      - be
+
+  db:
+    image: postgres:13
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=son25090606
+      - POSTGRES_DB=pdf360
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./pdf360-server/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  be:
+    build:
+      context: ./pdf360-server
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./pdf360-server:/app
+    depends_on:
+      - db
+
+networks:
+  traefik_default:
+    external: true
+
+volumes:
+  pgdata:

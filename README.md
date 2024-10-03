@@ -52,7 +52,7 @@ cd ..
 Build and start the application using Docker Compose:
 
 ```bash
-docker-compose up --build
+docker compose up --build
 ```
 
 This command will:

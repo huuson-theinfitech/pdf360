@@ -20,7 +20,7 @@ This project is a full-stack web application built with **FastAPI** for the back
 
    ```bash
    cd pdf360-server
-   cp env_example .env
+   cp .env.example .env
 
    ```
 

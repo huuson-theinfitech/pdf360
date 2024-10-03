@@ -46,7 +46,7 @@ This project is a full-stack web application built with **FastAPI** for the back
 Navigate to the root directory of the project:\*\*
 
 ```bash
-cd pdf360
+cd ..
 ```
 
 Build and start the application using Docker Compose:

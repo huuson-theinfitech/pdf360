@@ -20,7 +20,7 @@ import { Helmet } from 'react-helmet-async';
 import { useParams, useSearchParams } from 'react-router-dom';
 import PDFViewer from './PDFViewer/PDFViewer';
 
-const drawerWidth = 450;
+const drawerWidth = 350;
 
 const MyBox = ({ box, dpi }: { box: ICoordinate; dpi: number }) => {
   const [searchParams] = useSearchParams();

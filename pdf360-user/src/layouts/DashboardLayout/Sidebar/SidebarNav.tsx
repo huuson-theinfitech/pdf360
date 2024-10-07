@@ -1,4 +1,4 @@
-import { ArrowRightSvg, GearSvg, PDFSvg, XMarkSvg } from '@/assets/icons';
+import { ArrowRightSvg, DeleteSvg, GearSvg, PDFSvg, XMarkSvg } from '@/assets/icons';
 import { Dropzone, Logo } from '@/components';
 import useGetListPdfFile from '@/hooks/useListPdfFile';
 import useUploadPdf from '@/hooks/useUploadPdf';
@@ -63,8 +63,10 @@ const SidebarNav: React.FC<ISidebarNavProps> = ({ onToggleOpen, foldBreakpoint }
                   key={item.id}
                   url={`/pdf/${item.id}`}
                   title={item.file_name}
+                  pdfId={item.id}
                   startIcon={<PDFSvg />}
                   foldBreakpoint={foldBreakpoint}
+                  endIcon={<DeleteSvg />}
                 />
               );
             })}

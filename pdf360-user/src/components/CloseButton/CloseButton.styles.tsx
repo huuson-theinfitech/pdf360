@@ -5,10 +5,6 @@ export const StyledCloseButton = styled(IconButton)(({ theme }) => ({
   color: theme.palette.grey[700],
   transition: theme.transitions.create('all', { duration: 200 }),
 
-  position: 'absolute',
-  top: theme.spacing(3),
-  right: theme.spacing(3),
-
   ':hover': {
     transform: 'rotate(90deg)',
   },

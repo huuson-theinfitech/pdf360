@@ -4,7 +4,7 @@ services:
     build:
       context: ./pdf360-user
     ports:
-      - "8080:8080"
+      - "5173:5173"
     volumes:
       - ./pdf360-user:/app
       - /app/node_modules

@@ -18,6 +18,7 @@ export { default as ChevronRightSvg } from './regular/chevron-right.svg?react';
 export { default as CircleCheckSvg } from './regular/circle-check.svg?react';
 export { default as CircleQuestionSvg } from './regular/circle-question.svg?react';
 export { default as CircleUserSvg } from './regular/circle-user.svg?react';
+export { default as DeleteSvg } from './regular/delete.svg?react';
 export { default as DiamondSvg } from './regular/diamond.svg?react';
 export { default as DownloadSvg } from './regular/download.svg?react';
 export { default as EnvelopeSvg } from './regular/envelope.svg?react';

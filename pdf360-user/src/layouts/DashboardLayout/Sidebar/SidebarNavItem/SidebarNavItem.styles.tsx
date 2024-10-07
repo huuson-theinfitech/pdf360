@@ -4,7 +4,7 @@ export const StyledMenuItem = styled(MenuItem)(({ theme }) => {
   return {
     borderRadius: theme.shape?.borderRadius,
     height: 48,
-    minWidth: 48,
+    minWidth: 100,
     padding: theme.spacing(0, 1.5),
     color: theme.palette.grey[500],
     transition: theme.transitions.create('all'),

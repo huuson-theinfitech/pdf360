@@ -54,7 +54,7 @@ const Search: React.FC<ISearchProps> = ({
   };
 
   return (
-    <Box component='form' minWidth={320} onSubmit={handleSubmit}>
+    <Box minWidth={320} onSubmit={handleSubmit}>
       <StyledTextField
         name='search'
         value={value}

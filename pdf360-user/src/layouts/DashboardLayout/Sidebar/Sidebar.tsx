@@ -16,7 +16,6 @@ const Sidebar: React.FC<ISidebarProps> = ({ isOpen, onToggleOpen }) => {
 
   React.useEffect(() => {
     if (isOpen) onToggleOpen();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
   return (

@@ -16,6 +16,7 @@ export { default as FilterPopover } from './Popover/FilterPopover/FilterPopover'
 
 // RHF
 export { default as RHFDropzone } from './RHF/RHFDropzone';
+export { default as RHFTextField } from './RHF/RHFTextField';
 
 //Menu
 export { default as LanguageMenu } from './Menu/LanguageMenu';

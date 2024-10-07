@@ -1,7 +1,7 @@
 import { DiamondSvg, PDFSvg } from '@/assets/icons';
 
 export const FOLD_BREAKPOINT = '2xl';
-export const SIDEBAR_WIDTH = { lg: '80px', [FOLD_BREAKPOINT]: '250px' };
+export const SIDEBAR_WIDTH = { lg: '80px', [FOLD_BREAKPOINT]: '220px' };
 
 export const NAVIGATION = [
   {

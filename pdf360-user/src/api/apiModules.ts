@@ -23,7 +23,10 @@ const apiModules = {
         'Content-Type': 'multipart/form-data',
       },
     });
-
+    return response.data;
+  },
+  deletePdfFile: async (pdfId: string) => {
+    const response = await axiosInstance.delete(apiPath.listPdfFiles.DELETE(pdfId));
     return response.data;
   },
 };

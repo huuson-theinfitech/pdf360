@@ -1,5 +1,5 @@
 import apiModules from '@/api/apiModules';
-import { showSuccessMessage } from '@/utils/toastMessage';
+import { showErrorMessage, showSuccessMessage } from '@/utils/toastMessage';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 
 const useUploadPdf = () => {
@@ -12,6 +12,10 @@ const useUploadPdf = () => {
       queryClient.invalidateQueries({ queryKey: ['uploadPdf'] });
       queryClient.invalidateQueries(['list-pdf']);
       showSuccessMessage('Upload PDF file successfully');
+    },
+
+    onError: () => {
+      showErrorMessage('Upload PDF file error');
     },
   });
 

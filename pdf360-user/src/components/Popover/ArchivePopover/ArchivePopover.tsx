@@ -1,100 +1,64 @@
-import { Button, List, Stack, Typography } from '@mui/material';
+import { Button, Stack, Typography } from '@mui/material';
 import * as React from 'react';
 
-import { ArchiveSvg } from '@/assets/icons';
-import { Card, CloseButton, Search } from '@/components';
+import { CloseButton } from '@/components';
 import { StyledPopover } from './ArchivePopover.styles';
-import ArchivedItem from './ArchivedItem';
 
 interface IArchivePopoverProps {
   title?: string;
-  titleColor?: string;
   children?: React.ReactNode;
+  icon: React.ReactNode;
+  open: boolean;
+  anchorEl: HTMLButtonElement | null;
+  onClose: () => void;
+  onOpen: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 const ArchivePopover: React.FC<IArchivePopoverProps> = ({
-  title = 'Archived',
-  titleColor = 'error.light',
   children,
+  title,
+  icon,
+  open,
+  anchorEl,
+  onClose,
+  onOpen,
 }) => {
-  const [value, setValue] = React.useState('');
-  const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(null);
-
-  const handleOpen = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
-  const open = Boolean(anchorEl);
   const id = open ? 'simple-popover' : undefined;
-
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(event.target.value);
-  };
-
-  const handleInputClear = () => {
-    setValue('');
-  };
 
   return (
     <>
       <Button
-        aria-describedby={id}
-        variant='outlined'
-        endIcon={<ArchiveSvg />}
-        onClick={handleOpen}
+        sx={{
+          backgroundColor: 'transparent',
+          padding: '0',
+          minWidth: 'auto',
+          color: 'inherit',
+        }}
+        onClick={onOpen}
       >
-        Archive
+        {icon}
       </Button>
-
       <StyledPopover
         id={id}
         open={open}
         anchorEl={anchorEl}
-        anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-        transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-        onClose={handleClose}
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'left',
+        }}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'left',
+        }}
+        onClose={onClose}
       >
-        <Stack direction='column' gap={3}>
-          <Stack direction='row' alignItems='center' justifyContent='space-between' gap={2}>
-            <Card.Title color={titleColor}>{title}</Card.Title>
-
-            <CloseButton onClick={handleClose} />
+        <Stack direction='column' gap={1}>
+          <Stack direction='row' alignItems='center' justifyContent='space-between'>
+            <Typography variant='title1Medium'>{title}</Typography>
+            <CloseButton onClick={onClose} />
           </Stack>
 
-          <Stack direction='column' gap={1.5}>
-            <Search
-              placeholder='Search active products'
-              size='medium'
-              onChange={handleInputChange}
-              onClear={handleInputClear}
-            />
-            {value && (
-              <Typography variant='caption1' color='grey.400'>
-                Result for &quot;{value}&quot;
-              </Typography>
-            )}
-
-            <List
-              component={Stack}
-              gap={2}
-              sx={{ bgcolor: 'grey.200', p: 1.5, gap: 1.5, borderRadius: 2 }}
-            >
-              {Array.from(Array(5).keys()).map((index) => (
-                <ArchivedItem
-                  key={index}
-                  title='Product Name'
-                  archivedBy='John Doe'
-                  archivedAt='2021-10-01T14:48:00.000Z'
-                />
-              ))}
-            </List>
-
-            {children}
-          </Stack>
+          {children}
         </Stack>
       </StyledPopover>
     </>

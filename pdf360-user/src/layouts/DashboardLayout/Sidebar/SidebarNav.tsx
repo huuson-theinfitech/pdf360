@@ -55,7 +55,20 @@ const SidebarNav: React.FC<ISidebarNavProps> = ({ onToggleOpen, foldBreakpoint }
             accept: ['application/pdf'].join(', '),
           }}
         />
-        <MenuList component={Stack} gap={1} flex={1} sx={{ p: 0, overflowY: 'auto' }}>
+        <MenuList
+          component={Stack}
+          gap={1}
+          flex={1}
+          sx={{
+            p: 0,
+            overflowY: 'auto',
+            '&::-webkit-scrollbar': {
+              display: 'none',
+            },
+            '-ms-overflow-style': 'none',
+            'scrollbar-width': 'none',
+          }}
+        >
           {isSuccess &&
             data.map((item: IPdfFile) => {
               return (

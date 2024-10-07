@@ -4,15 +4,12 @@ export const StyledMenuItem = styled(MenuItem)(({ theme }) => {
   return {
     borderRadius: theme.shape?.borderRadius,
     height: 48,
-    minWidth: 100,
     padding: theme.spacing(0, 1.5),
     color: theme.palette.grey[500],
     transition: theme.transitions.create('all'),
-    textTransform: 'none',
-    overflowX: 'hidden',
-    whiteSpace: 'nowrap',
-    textOverflow: 'ellipsis',
-
+    '&.MuiButtonBase-root.MuiMenuItem-root': {
+      minHeight: `${theme.spacing(6)} !important`,
+    },
     '&.active': {
       backgroundColor: theme.palette.grey[300],
       boxShadow: theme.customShadows.boxInset,

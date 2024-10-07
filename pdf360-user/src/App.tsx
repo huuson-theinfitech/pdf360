@@ -1,4 +1,4 @@
-import { ScrollToTop } from '@/components';
+import { ScrollRestoration } from '@/components';
 import Router from '@/routes';
 import ThemeProvider from '@/themes';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
@@ -28,8 +28,8 @@ const App: React.FC = () => {
         <ThemeProvider>
           <BrowserRouter>
             <HelmetProvider>
+              <ScrollRestoration />
               <Router />
-              <ScrollToTop />
             </HelmetProvider>
           </BrowserRouter>
         </ThemeProvider>

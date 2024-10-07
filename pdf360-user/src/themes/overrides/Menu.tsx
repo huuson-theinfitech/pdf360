@@ -20,7 +20,6 @@ export default function Menu(theme: Theme): Components<Theme> {
           padding: theme.spacing(1),
           borderRadius: theme.shape.borderRadius * 0.75,
           transition: theme.transitions.create('all'),
-
           ':hover': {
             backgroundColor: theme.palette.grey[200],
           },

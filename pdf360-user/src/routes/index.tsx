@@ -22,7 +22,6 @@ const Router = () => {
       ],
     },
     {
-      // element: <ProtectedRoute redirectPath='/' />,
       children: [
         {
           path: 'auth',

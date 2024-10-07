@@ -5,7 +5,7 @@ export { default as CloseButton } from './CloseButton/CloseButton';
 export { default as Dropdown } from './Dropdown/Dropdown';
 export { default as Dropzone } from './Dropzone/Dropzone';
 export { default as Logo } from './Logo/Logo';
-export { default as ScrollToTop } from './ScrollToTop/ScrollToTop';
+export { default as ScrollRestoration } from './ScrollRestoration/ScrollRestoration';
 export { default as Search } from './Search/Search';
 export { default as SuggestionSearch } from './SuggestionSearch/SuggestionSearch';
 export { default as SuspenseContainer } from './SuspenseContainer/SuspenseContainer';
